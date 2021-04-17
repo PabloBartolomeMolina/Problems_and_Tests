@@ -15,7 +15,7 @@ using namespace std;
 string getInput(string demand)
 {
 	string inputText = "empty";
-	cout << demand;	// Ask for any type of inout
+	cout << demand;					// Ask for any type of input
 	getline(cin, inputText);		// Get user input from the keyboard
 	return inputText;
 }
@@ -31,13 +31,13 @@ void sum()
 		tmp = getInput("Enter a number to sum: ");
 		if (regex_match(tmp, std::regex("[0-9]+")))
 		{
-			// It is a number
+			// It is a number, proceed with the sum.
 			temp = stoi(tmp);
 			sum += temp;
 		}
 		else
 		{
-			// It is not a number
+			// It is not a number, error message displayed.
 			cout << "It is not a valid number and will not be sum." << endl;
 		}
 	}
@@ -48,5 +48,6 @@ void sum()
 int main()
 {
 	sum();
+
 	return 0;
 }
