@@ -4,22 +4,49 @@
 #include "Problems_and_Tests.h"
 
 #include <string>
+#include <regex>
+
 using std::string;
 using std::getline;
+using std::regex;
 
 using namespace std;
 
-string getInput()
+string getInput(string demand)
 {
 	string inputText = "empty";
-	cout << "Type some words: ";	// Ask for any type of inout
+	cout << demand;	// Ask for any type of inout
 	getline(cin, inputText);		// Get user input from the keyboard
 	return inputText;
+}
+
+void sum()
+{
+	int sum = 0;
+	int temp = 0;
+	string tmp = "0";
+
+	for (int i = 0; i < 2; i++)
+	{
+		tmp = getInput("Enter a number to sum: ");
+		if (regex_match(tmp, std::regex("[0-9]+")))
+		{
+			// It is a number
+			temp = stoi(tmp);
+			sum += temp;
+		}
+		else
+		{
+			// It is not a number
+			cout << "It is not a valid number and will not be sum." << endl;
+		}
+	}
+	cout << "Sum: " << sum << endl;
 }
 
 
 int main()
 {
-	cout << getInput() << endl;
+	sum();
 	return 0;
 }
