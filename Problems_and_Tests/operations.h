@@ -9,7 +9,7 @@ using std::getline;
 using std::regex;
 
 class Operations {
-	int sum, temp;
+	int sumRes, temp;
 	float result;
 	string tmp;
 
@@ -17,12 +17,8 @@ class Operations {
 	string getInput(string demand);
 
 public:
-	Operations() {
-		cout << "Class constructor called" << endl;
-	}
-	~Operations() {
-		cout << "Class destructor called" << endl;
-	}
+	Operations();
+	~Operations();
 	void sum();
 	void multiply();
 	void divide();
