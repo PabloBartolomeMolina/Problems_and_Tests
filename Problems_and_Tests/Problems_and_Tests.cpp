@@ -16,7 +16,15 @@ using std::regex;
 
 int main()
 {
+	// Create ops object.
 	Operations *ops = new Operations();
+
+	// Operations using the object.
+	ops->sum();
+	ops->multiply();
+	ops->divide();
+
+	// Delete ops object.
 	delete ops;
 	return 0;
 }
