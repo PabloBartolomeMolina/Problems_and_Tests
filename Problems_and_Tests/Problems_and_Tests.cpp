@@ -6,6 +6,7 @@
 #include <string>
 #include <regex>
 
+#include "operations.h"
 
 using namespace std; 
 
@@ -149,5 +150,7 @@ int main()
 	sum();
 	multiply();
 	divide();
+
+	
 	return 0;
 }
