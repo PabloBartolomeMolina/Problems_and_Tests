@@ -64,7 +64,9 @@ void Operations::sum()
 	int temp = 0;
 	string tmp = "0";
 
-	for (int i = 0; i < 2; i++)
+	int n = stoi(getInput("How many numbers to sum up ? "));
+
+	for (int i = 0; i < n; i++)
 	{
 		tmp = getInput("Enter a number to sum: ");
 
@@ -94,7 +96,9 @@ void Operations::multiply()
 	string tmp = "0";
 	bool first = true;
 
-	for (int i = 0; i < 2; i++)
+	int n = stoi(getInput("How many numbers to multiply ? "));
+
+	for (int i = 0; i < n; i++)
 	{
 		tmp = getInput("Enter a number to multiply: ");
 
