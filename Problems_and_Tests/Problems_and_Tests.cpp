@@ -3,9 +3,11 @@
 
 #include "Problems_and_Tests.h"
 
+#include <ctime>
+#include <chrono>
 #include <iostream>  
-#include <string>
 #include <regex>
+#include <string>
 
 #include "operations.h"
 
@@ -13,7 +15,6 @@ using namespace std;
 
 using std::string;
 using std::getline;
-using std::regex;
 
 
 
@@ -25,29 +26,29 @@ void operations()
 	Operations* ops = new Operations();
 
 	// Operations using the object. Testing purposes.
-	/*ops->sum();
+	ops->sum();
 	ops->multiply();
-	ops->divide();*/
+	ops->divide();
 	ops->power();
 
 	// Delete ops object.
 	delete ops;
 }
 
-#include <ctime>
-#include <chrono>
-#include <iostream>
+
 
 void time()
 {
-	std::clock_t    start;
-
-	start = clock();
+	clock_t start = clock();
 	
 	operations();
 
+	clock_t end = clock();
+
+	double diff = ((double)end - (double)start) / (double)(CLOCKS_PER_SEC / 1000);
+
 	// your test
-	cout << "Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+	cout << "Time: " << diff << " ms" << endl;
 
 }
 
