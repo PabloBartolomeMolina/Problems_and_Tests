@@ -23,7 +23,7 @@ int main()
 	ops->sum();
 	ops->multiply();
 	ops->divide();
-	ops->exponential();
+	ops->power();
 
 	// Delete ops object.
 	delete ops;

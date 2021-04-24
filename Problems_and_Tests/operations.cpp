@@ -171,7 +171,7 @@ void Operations::divide()
 
 
 /* power method */
-void Operations::exponential()
+void Operations::power()
 {
 	int base = 0;
 	int exp = 0;
