@@ -22,4 +22,5 @@ public:
 	void sum();
 	void multiply();
 	void divide();
+	void exponential();
 };

@@ -128,7 +128,7 @@ void Operations::multiply()
 }
 
 
-/* divide method*/
+/* divide method */
 void Operations::divide()
 {
 	float div = 0;
@@ -167,4 +167,64 @@ void Operations::divide()
 		}
 	}
 	cout << "Result: " << div << endl;
+}
+
+
+/* power method */
+void Operations::exponential()
+{
+	int base = 0;
+	int exp = 0;
+	int result = 1;
+	string tmp = "0";
+
+	// Base of the operation.
+	tmp = getInput("Enter the base number: ");
+	bool verify = checkInput(tmp);
+
+	while (!verify)
+	{
+		tmp = getInput("Not valid input. Enter the base number: ");
+		bool verify = checkInput(tmp);
+	}
+	if (verify)
+	{
+		base = stoi(tmp);
+	}
+	else
+	{
+		/* NOPE */
+	}
+
+	// Exponent of the operation.
+	tmp = getInput("Enter the exponent number: ");
+	verify = checkInput(tmp);
+
+	while (!verify)
+	{
+		tmp = getInput("Not valid input. Enter the exponent number: ");
+		bool verify = checkInput(tmp);
+	}
+	if (verify)
+	{
+		exp = stoi(tmp);
+	}
+	else
+	{
+		/* NOPE */
+	}
+
+	for (int i = 1; i < exp; i++)
+	{
+		if (i == 1)
+		{
+			result = base * base;
+		}
+		else
+		{
+			result = result * base;
+		}
+	}
+	
+	cout << "Result: " << result << endl;
 }
