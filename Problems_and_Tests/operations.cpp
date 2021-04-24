@@ -184,8 +184,8 @@ void Operations::power()
 
 	while (!verify)
 	{
-		tmp = getInput("Not valid input. Enter the base number: ");
-		bool verify = checkInput(tmp);
+		tmp = getInput("Enter the base number: ");
+		verify = checkInput(tmp);
 	}
 	if (verify)
 	{
@@ -202,8 +202,8 @@ void Operations::power()
 
 	while (!verify)
 	{
-		tmp = getInput("Not valid input. Enter the exponent number: ");
-		bool verify = checkInput(tmp);
+		tmp = getInput("Enter the exponent number: ");
+		verify = checkInput(tmp);
 	}
 	if (verify)
 	{
