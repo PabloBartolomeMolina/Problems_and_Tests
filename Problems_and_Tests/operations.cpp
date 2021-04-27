@@ -228,3 +228,45 @@ void Operations::power()
 	
 	cout << "Result: " << result << endl;
 }
+
+
+/* exponential method */
+void Operations::exp()
+{
+	double base = 2.718281828459045;  // approximation for e number.
+	int exp = 0;
+	double result = 1;
+	string tmp = "0";
+
+	// Exponent of the operation.
+	tmp = getInput("Enter the exponent number: ");
+	bool verify = checkInput(tmp);
+
+	while (!verify)
+	{
+		tmp = getInput("Enter the exponent number (integer): ");
+		verify = checkInput(tmp);
+	}
+	if (verify)
+	{
+		exp = stoi(tmp);
+	}
+	else
+	{
+		/* NOPE */
+	}
+
+	for (int i = 1; i < exp; i++)
+	{
+		if (i == 1)
+		{
+			result = base * base;
+		}
+		else
+		{
+			result = result * base;
+		}
+	}
+
+	cout << "Result of e^" + tmp + ": " << result << endl;
+}

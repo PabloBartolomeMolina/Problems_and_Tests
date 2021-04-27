@@ -23,4 +23,5 @@ public:
 	void multiply();
 	void divide();
 	void power();
+	void exp();
 };

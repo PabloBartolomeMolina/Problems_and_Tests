@@ -26,10 +26,11 @@ void operations()
 	Operations* ops = new Operations();
 
 	// Operations using the object. Testing purposes.
-	ops->sum();
+	/*ops->sum();
 	ops->multiply();
 	ops->divide();
-	ops->power();
+	ops->power();*/
+	ops->exp();
 
 	// Delete ops object.
 	delete ops;
