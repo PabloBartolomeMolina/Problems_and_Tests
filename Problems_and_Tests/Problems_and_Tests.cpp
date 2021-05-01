@@ -40,8 +40,17 @@ void operations()
 
 void strings()
 {
-	bool ok = checkFile("D:\SensorFusion.rar");
+	/* Several dummy strings just for testing. */
+	bool ok = checkFile("D:/SensorFusion.rar");
+	cout << ok << endl;
 
+	ok = checkFile("D:/Hello/My/Friend/Bye/strings.h");
+	cout << ok << endl;
+	
+	ok = checkFile("C:/Just/Another/Try/String/strings.doc");
+	cout << ok << endl;
+
+	ok = checkFile("H:/Hello/There/General/Kenobi/strings.docx");
 	cout << ok << endl;
 }
 
