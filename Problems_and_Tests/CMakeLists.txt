@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Ajoutez une source à l'exécutable de ce projet.
-add_executable (Problems_and_Tests "Problems_and_Tests.cpp" "Problems_and_Tests.h" "operations.cpp" "operations.h"  )
+add_executable (Problems_and_Tests "Problems_and_Tests.cpp" "Problems_and_Tests.h" "operations.cpp" "operations.h"    "strings.h" "strings.cpp")
 
 # TODO: Ajoutez des tests et installez des cibles si nécessaire.

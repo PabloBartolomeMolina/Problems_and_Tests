@@ -10,6 +10,7 @@
 #include <string>
 
 #include "operations.h"
+#include "strings.h"
 
 using namespace std; 
 
@@ -37,7 +38,15 @@ void operations()
 }
 
 
+void strings()
+{
+	bool ok = checkFile("D:\SensorFusion.rar");
 
+	cout << ok << endl;
+}
+
+
+/* Function to measure the time of some tasks. */
 void time()
 {
 	clock_t start = clock();
@@ -55,7 +64,7 @@ void time()
 
 int main()
 {
-	time();
+	strings();
 	
 	return 0;
 }

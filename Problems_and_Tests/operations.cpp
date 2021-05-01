@@ -1,7 +1,3 @@
-#include <iostream>  
-#include <regex>
-#include <string>
-
 #include "operations.h"
 
 using namespace std;
