@@ -20,28 +20,28 @@ int countWords(string path)
 {
 	ifstream file;
 	file.open(path);
-	char ch = '0';		// Dummy initialization
-	char ch_pr = '0';	// Dummy initialization
-	int word = 1;
+	char ch = '0';		// Dummy initialization for current char.
+	char ch_pr = '0';	// Dummy initialization for previous char.
+	int word = 1;		// To consider first word.
 
 	// Check if file exists.
 	if (file) {
-		file.seekg(0, ios::beg); //bring position of file pointer to begining of file
+		// Bring position of file pointer to begining of file.
+		file.seekg(0, ios::beg);
 
 		while (file)
 		{
 			file.get(ch);
-			/*if ((ch == '\s' || ch == '\n') && (ch_pr == '\s'))
-				word++;*/
-			
+			// Add one word if current char is a white space or an end of line and the previous one was not.
 			if ((iscntrl(ch) || isspace(ch)) && (!iscntrl(ch_pr)) && (!isspace(ch_pr)))
 				word++;
-			ch_pr = ch;
+			ch_pr = ch;	// Get current char to the previous one before go to the next one.
 		}
 		return word;
 	}
 	else {
-		cout << "File doesn't exist" << endl;
+		// File not existing, return a negative number to indicate so.
+		cout << "File doesn't exist." << endl;
 		return -1;
 	}
 }
