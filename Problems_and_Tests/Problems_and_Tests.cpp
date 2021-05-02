@@ -5,7 +5,7 @@
 
 #include <ctime>
 #include <chrono>
-#include <iostream>  
+#include <fstream>
 #include <regex>
 #include <string>
 
@@ -27,10 +27,10 @@ void operations()
 	Operations* ops = new Operations();
 
 	// Operations using the object. Testing purposes.
-	/*ops->sum();
+	ops->sum();
 	ops->multiply();
 	ops->divide();
-	ops->power();*/
+	ops->power();
 	ops->exp();
 
 	// Delete ops object.
@@ -40,18 +40,51 @@ void operations()
 
 void strings()
 {
+	int words = 0;
 	/* Several dummy strings just for testing. */
 	bool ok = checkFile("D:/SensorFusion.rar");
-	cout << ok << endl;
+	if (ok)
+	{
+		words = countWords("D:/SensorFusion.rar");
+		if (words == -1)
+			cout << endl;
+		else
+			cout << "Number of words in the document: " << words << "." << endl << endl;
+	}
+	words = 0;
 
-	ok = checkFile("D:/Hello/My/Friend/Bye/strings.h");
-	cout << ok << endl;
+	ok = checkFile("D:/Cpp_Projects/Problems_and_Tests/Problems_and_Tests/Problems_and_Tests/strings.h");
+	if (ok)
+	{
+		words = countWords("D:/Cpp_Projects/Problems_and_Tests/Problems_and_Tests/Problems_and_Tests/strings.h");
+		if (words == -1)
+			cout << endl;
+		else
+			cout << "Number of words in the document: " << words << "." << endl << endl;
+	}
+	words = 0;
 	
 	ok = checkFile("C:/Just/Another/Try/String/strings.doc");
-	cout << ok << endl;
+	if (ok)
+	{
+		words = countWords("C:/Just/Another/Try/String/strings.doc");
+		if (words == -1)
+			cout << endl;
+		else
+			cout << "Number of words in the document: " << words << "." << endl << endl;
+	}
+	words = 0;
 
 	ok = checkFile("H:/Hello/There/General/Kenobi/strings.docx");
-	cout << ok << endl;
+	if (ok)
+	{
+		words = countWords("H:/Hello/There/General/Kenobi/strings.docx");
+		if (words == -1)
+			cout << endl;
+		else
+			cout << "Number of words in the document: " << words << "." << endl << endl;
+	}
+	words = 0;
 }
 
 
