@@ -38,7 +38,8 @@ void operations()
 }
 
 
-void strings()
+/* Count words in files if they exist. */
+void wordCounting()
 {
 	int words = 0;
 	/* Several dummy strings just for testing. */
@@ -64,10 +65,10 @@ void strings()
 	}
 	words = 0;
 	
-	ok = checkFile("C:/Just/Another/Try/String/strings.doc");
+	ok = checkFile("D:/DELF_B2/Patata.doc");
 	if (ok)
 	{
-		words = countWords("C:/Just/Another/Try/String/strings.doc");
+		words = countWords("D:/DELF_B2/¨Patata.doc");
 		if (words == -1)
 			cout << endl;
 		else
@@ -75,10 +76,10 @@ void strings()
 	}
 	words = 0;
 
-	ok = checkFile("H:/Hello/There/General/Kenobi/strings.docx");
+	ok = checkFile("D:/DELF_B2/Escritos.docx");
 	if (ok)
 	{
-		words = countWords("H:/Hello/There/General/Kenobi/strings.docx");
+		words = countWords("D:/DELF_B2/Escritos.docx");
 		if (words == -1)
 			cout << endl;
 		else
@@ -86,6 +87,8 @@ void strings()
 	}
 	words = 0;
 }
+
+
 
 
 /* Function to measure the time of some tasks. */
@@ -106,7 +109,7 @@ void time()
 
 int main()
 {
-	strings();
+	wordCounting();
 	
 	return 0;
 }
