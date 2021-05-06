@@ -59,6 +59,6 @@ int countWords(string path)
 /* Count letter repetitions on the string. */
 void countLetters(string input)
 {
-	transform(input.begin(), input.end(), input, tolower);	// Convert string to lower case.
-
+	transform(input.begin(), input.end(), input.begin(), tolower);	// Convert string to lower case.
+	cout << endl << input << endl;
 }
