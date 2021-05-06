@@ -39,8 +39,10 @@ int countWords(string path)
 			if ((iscntrl(ch) || isspace(ch) || ispunct(ch)) && (!iscntrl(ch_pr)) && (!isspace(ch_pr)) && (!ispunct(ch_pr)))
 				word++;
 			ch_pr = ch;	// Get current char to the previous one before go to the next one.
-
-			str.push_back(ch);
+			
+			/* Keep just the letters. */
+			if ((!iscntrl(ch) && !isspace(ch) && !ispunct(ch)))
+				str.push_back(ch);
 		}
 
 		countLetters(str);
@@ -54,6 +56,7 @@ int countWords(string path)
 	}
 }
 
+/* Count letter repetitions on the string. */
 void countLetters(string input)
 {
 	transform(input.begin(), input.end(), input, tolower);	// Convert string to lower case.
