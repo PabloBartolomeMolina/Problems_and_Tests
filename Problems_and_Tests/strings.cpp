@@ -59,6 +59,25 @@ int countWords(string path)
 /* Count letter repetitions on the string. */
 void countLetters(string input)
 {
+	string letters = "abcdefghijklmnopqrstuvwxyz";	// Base for comparisons.
+	int occurrence = 0;
+	char number[26];
+	string total = "";
+
 	transform(input.begin(), input.end(), input.begin(), tolower);	// Convert string to lower case.
 	cout << endl << input << endl;
+
+	for (int i = 0; i < letters.size(); i++)
+	{
+		for (int ii = 0; ii < input.size(); ii++)
+		{
+			if (letters[i] == input[ii])
+				occurrence++;
+		}
+
+		total += to_string(occurrence) + "-";
+		occurrence = 0;
+	}
+
+	cout << endl << total << endl;
 }
