@@ -25,6 +25,7 @@ int countWords(string path)
 	char ch = ' ';		// Dummy initialization for current char.
 	char ch_pr = ' ';	// Dummy initialization for previous char.
 	int word = 0;		// To consider first word.
+	string str = "";
 
 	// Check if file exists. If so, count the words.
 	if (file) {
@@ -38,7 +39,12 @@ int countWords(string path)
 			if ((iscntrl(ch) || isspace(ch) || ispunct(ch)) && (!iscntrl(ch_pr)) && (!isspace(ch_pr)) && (!ispunct(ch_pr)))
 				word++;
 			ch_pr = ch;	// Get current char to the previous one before go to the next one.
+
+			str.push_back(ch);
 		}
+
+		countLetters(str);
+
 		return word;
 	}
 	else {
@@ -46,4 +52,10 @@ int countWords(string path)
 		cout << "File doesn't exist." << endl;
 		return -1;
 	}
+}
+
+void countLetters(string input)
+{
+	transform(input.begin(), input.end(), input, tolower);	// Convert string to lower case.
+
 }

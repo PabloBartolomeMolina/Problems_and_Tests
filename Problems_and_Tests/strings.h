@@ -11,3 +11,4 @@ using std::regex;
 
 bool checkFile(string input);
 int countWords(string path);
+void countLetters(string input);
