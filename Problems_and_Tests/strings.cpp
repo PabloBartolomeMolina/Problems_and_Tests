@@ -60,9 +60,8 @@ int countWords(string path)
 void countLetters(string input)
 {
 	string letters = "abcdefghijklmnopqrstuvwxyz";	// Base for comparisons.
-	int occurrence = 0;
-	int count[26] = { 0 };
-	string total = "";
+	int occurrence = 0;		// Intermediate variable to allocate occurence of each letter.
+	int count[26] = { 0 };	// Array to store all occurrences.
 
 	// Spacing strings for formatting of output
 	string sSpace = " //   ";
@@ -80,18 +79,19 @@ void countLetters(string input)
 		}
 		count[i] = occurrence;
 		occurrence = 0;
-		
 	}
 
 	// Print results.
 	cout << endl << endl;
-	cout << "Counting the letters results in : " << endl;
+	cout << "Counting the letters results are : " << endl;
 	for (int i = 0; i < letters.length(); i++)
 	{
+		// Lines of only two letters to improve readability.
 		if (i%2==1)
 			cout << letters.at(i) << " -- " << to_string(count[i]) << endl;
 		else
 		{
+			// Manage spaces in the lines to give a table-like format with uniform columns.
 			if (count[i] >= 10 &&count[i] < 100)
 				cout << letters.at(i) << " -- " << to_string(count[i]) << dSpace;
 			else if (count[i] >= 100)
