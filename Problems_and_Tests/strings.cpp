@@ -61,23 +61,44 @@ void countLetters(string input)
 {
 	string letters = "abcdefghijklmnopqrstuvwxyz";	// Base for comparisons.
 	int occurrence = 0;
-	char number[26];
+	int count[26] = { 0 };
 	string total = "";
 
-	transform(input.begin(), input.end(), input.begin(), tolower);	// Convert string to lower case.
-	cout << endl << input << endl;
+	// Spacing strings for formatting of output
+	string sSpace = " //   ";
+	string dSpace = "  //   ";
+	string tSpace = "   //   ";
 
-	for (int i = 0; i < letters.size(); i++)
+	transform(input.begin(), input.end(), input.begin(), tolower);	// Convert string to lower case.
+
+	for (int i = 0; i < letters.length(); i++)
 	{
-		for (int ii = 0; ii < input.size(); ii++)
+		for (int ii = 0; ii < input.length(); ii++)
 		{
-			if (letters[i] == input[ii])
+			if (letters.at(i) == input.at(ii))
 				occurrence++;
 		}
-
-		total += to_string(occurrence) + "-";
+		count[i] = occurrence;
 		occurrence = 0;
+		
 	}
 
-	cout << endl << total << endl;
+	// Print results.
+	cout << endl << endl;
+	cout << "Counting the letters results in : " << endl;
+	for (int i = 0; i < letters.length(); i++)
+	{
+		if (i%2==1)
+			cout << letters.at(i) << " -- " << to_string(count[i]) << endl;
+		else
+		{
+			if (count[i] >= 10 &&count[i] < 100)
+				cout << letters.at(i) << " -- " << to_string(count[i]) << dSpace;
+			else if (count[i] >= 100)
+				cout << letters.at(i) << " -- " << to_string(count[i]) << sSpace;
+			else if (count[i] < 10)
+				cout << letters.at(i) << " -- " << to_string(count[i]) << tSpace;
+		}	
+	}
+	cout << endl << endl;
 }
