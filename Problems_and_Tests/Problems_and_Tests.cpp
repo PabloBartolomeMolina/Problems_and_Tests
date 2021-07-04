@@ -88,7 +88,6 @@ void wordCounting()
 	words = 0;
 }
 
-
 vector<int> repetitions = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 vector<char> letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
 						'w', 'x', 'y', 'z' };
@@ -97,34 +96,19 @@ void letterCounter()
 {
 	string testString = "Hello, my name is Peter and I do not know what to do today.";
 	int index = 0;
-	/*for each (char c in testString)
+
+	for each (char ch in letters)	// Check each letter in the entire string.
 	{
-		for each (char ch in letters)
-		{
-			if (c == ch)
-			{
-				repetitions[i] ++;
-				i++;
-
-				break;
-			}
-		}
-
-		cout << c << endl;
-	}*/
-
-	for each (char ch in letters)
-	{
-		for (int i = 0; i < testString.length(); i++)
+		for (int i = 0; i < testString.length(); i++)	// Increment counter of the letter if it is found.
 		{
 			if (ch == testString[i])
 				repetitions[index]++;
 		}
-		index++;
+		index++;	// Index to update the counter of the corresponding letter.
 	}
 
 	index = 0;
-	for each (int ch in repetitions)
+	for each (int ch in repetitions)	// Print results.
 	{
 		cout << letters[index] << " : " << ch << endl;
 		index++;
